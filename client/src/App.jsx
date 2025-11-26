@@ -1,18 +1,15 @@
-import './App.css'
-import { Button, HStack } from "@chakra-ui/react"
 
-function App() {
-  
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Index from './pages/HomePage.jsx';
+import NotFound from './pages/NotFound';
 
-  return (
-   <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-<Button>sdfsf</Button>
-      
-   </div>
-  )
-}
+const App = () => (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+);
 
-export default App
+export default App;
